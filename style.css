@@ -1,0 +1,365 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #ffd3ec;
+}
+
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 340px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(93, 57, 104, 0.5);
+    box-sizing: border;
+    box-shadow: 0 15px 25px rgba(248, 54, 216, 0.5);
+    border-radius: 10px;
+}
+
+.taas1, .taas2, .taas3, .taas4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: inline-flex;
+}
+
+.wa {
+    transition: .4s;
+    transform: translatex(0);
+    cursor: pointer;
+    color: #fff;
+}
+
+.wa:hover {
+    transform: translateY(-1rem);
+    background: -webkit-linear-gradient(120deg,
+    hsl(0, 71%, 51%), hsl(335, 78%, 61%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.box h3 {
+    font-style: oblique;
+    color:hsl(310, 56%, 33%)
+}
+
+.box h2 {
+    margin: 8px 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.box .user {
+    position: relative;
+}
+
+.box .user input {
+    width: 90%;
+    padding: 5px 0;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    cursor: text;
+}
+
+.box .user label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.box .user input:focus ~ label,
+.box .user input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+}
+
+.pets {
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid #03e9f4;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: all 0.3 ease;
+}
+
+button[type="submit"] {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    background: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+}
+
+button[type="submit"] span {
+    position: absolute;
+    display: block;
+}
+
+.glow1 {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+    transition: all 0.5s ease-in-out;
+}
+
+.pet-display {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.box button span:nth-child(1) {
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+.box  button span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .2s;
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+.box button span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s;
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+.box button span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s;
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}
+
+/* Modal (Pop-up) styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#petImage {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#closeModal {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+#closeModal:hover,
+#closeModal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    background: yellow;
+    border-radius: 50%;
+    position: absolute;
+    top: 260px;
+    left: 220px;
+    z-index: 1;
+}
+
+.petal {
+    width: 20px;
+    height: 80px;
+    background: rgb(235, 119, 215);
+    position: absolute;
+    border-radius: 50%;
+    transform-origin: 50% 100%;
+    top: 200px; 
+    left: 233px;
+}
+
+.petal1 {  transform: rotate(0deg); }
+.petal2 {  transform: rotate(22.5deg); }
+.petal3 {  transform: rotate(45deg); }
+.petal4 {  transform: rotate(67.5deg); }
+.petal5 {  transform: rotate(90deg); }
+.petal6 {  transform: rotate(112.5deg); }
+.petal7 {  transform: rotate(135deg); }
+.petal8 {  transform: rotate(157.5deg); }
+.petal9 {  transform: rotate(180deg); }
+.petal10 {  transform: rotate(202.5deg); }
+.petal11 {  transform: rotate(225deg); }
+.petal12 {  transform: rotate(247.5deg); }
+.petal13 {  transform: rotate(270deg); }
+.petal14 {  transform: rotate(292.5deg); }
+.petal15 {  transform: rotate(315deg); }
+.petal16 {  transform: rotate(337.5deg); }
+
+
+.bpetal {
+    width: 35px;
+    height: 100px;
+    background: rgb(218, 101, 198);
+    position: absolute;
+    border-radius: 50%;
+    transform-origin: 50% 100%;
+    top: 178px; 
+    left: 223px;
+} 
+
+.petal17 {  transform: rotate(0deg); }
+.petal18 {  transform: rotate(45deg); }
+.petal19 {  transform: rotate(90deg); }
+.petal20 {  transform: rotate(135deg); }
+.petal21 {  transform: rotate(180deg); }
+.petal22 {  transform: rotate(225deg); }
+.petal23 {  transform: rotate(270deg); }
+.petal24 {  transform: rotate(315deg); }
+
+
+.flower-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    text-align: center;
+    font-size: 2em;
+    gap: 30px;
+}
+
+.flower-container div {
+    cursor: pointer; /* Makes it look clickable */
+    transition: transform 1s ease-in-out; /* Smooth transition when moving */
+}
+
+
+
+

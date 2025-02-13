@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petmo | Firebase</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/awesomplete@1.1.5/awesomplete.css" />
+    <script src="https://cdn.jsdelivr.net/npm/awesomplete@1.1.5/awesomplete.min.js"></script>
+</head>
+<body>
+    <div class="box" id="formContainer">
+        <h2>
+            <div class="taas1">
+                <div class="wa">H</div>
+                <div class="wa">A</div>
+                <div class="wa">P</div>
+                <div class="wa">P</div>
+                <div class="wa">Y</div>
+            </div>
+
+            <div class="taas2">
+                <div class="wa">V</div>
+                <div class="wa">A</div>
+                <div class="wa">L</div>
+                <div class="wa">E</div>
+                <div class="wa">N</div>
+                <div class="wa">T</div>
+                <div class="wa">I</div>
+                <div class="wa">N</div>
+                <div class="wa">E</div>
+                <div class="wa">S</div>
+            </div>
+
+            <div class="taas3">
+                <div class="wa">P</div>
+                <div class="wa">O</div>
+            </div>
+
+            <div class="taas4">
+                <div class="wa">♡</div>
+            </div>
+        </h2>
+
+        <form id="loginForm">
+            <div class="user">
+                <input type="text" id="name" name="name" required="">
+                <label>Your name</label>
+            </div>
+
+            <button type="submit" id="submitButton">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Submit
+            </button>
+        </form>
+    </div>
+
+    <div class="box" id="successMessage" style="display: none;">
+        <h3 id="successText">Thank you!</h3>
+        <div class="flower">
+            <div class="circle"></div>
+            <div class="petal petal1"></div>
+            <div class="petal petal2"></div>
+            <div class="petal petal3"></div>
+            <div class="petal petal4"></div>
+            <div class="petal petal5"></div>
+            <div class="petal petal6"></div>
+            <div class="petal petal7"></div>
+            <div class="petal petal8"></div>
+            <div class="petal petal9"></div>
+            <div class="petal petal10"></div>
+            <div class="petal petal11"></div>
+            <div class="petal petal12"></div>
+            <div class="petal petal13"></div>
+            <div class="petal petal14"></div>
+            <div class="petal petal15"></div>
+            <div class="petal petal16"></div>
+
+            <div class="bpetal petal17"></div>
+            <div class="bpetal petal18"></div>
+            <div class="bpetal petal19"></div>
+            <div class="bpetal petal20"></div>
+            <div class="bpetal petal21"></div>
+            <div class="bpetal petal22"></div>
+            <div class="bpetal petal23"></div>
+            <div class="bpetal petal24"></div>
+
+            <div class="flower-container">
+                <div class="rose">🌹</div>
+                <div class="tulips">🌷</div>
+                <div class="bokey">💐</div>
+                <div class="ewan">🌸</div>
+                <div class="mongo">🌺</div>
+                <div class="white">🌼</div>
+                <div class="sun">🌻</div>
+                <div class="clover">🍀</div>
+            </div>
+                        
+
+        </div>
+        <button id="closeModal" onclick="closeModal()">Close</button>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            var userName = document.getElementById('name').value;
+
+            document.getElementById('formContainer').style.display = 'none';
+
+            document.getElementById('successText').innerHTML = "Hi " + userName + ", I miss you so much. I hope you're doing well and I hope we meet again. Happy Valentine's, Take care!";
+
+            document.getElementById('successMessage').style.display = 'block';
+        });
+
+        function closeModal() {
+            document.getElementById('successMessage').style.display = 'none';
+            document.getElementById('formContainer').style.display = 'block';
+        }
+
+const flowers = document.querySelectorAll('.flower-container div');
+
+function moveRandomly(event) {
+
+    const emoji = event.target;
+    
+    const container = document.querySelector('.flower-container');
+    const containerWidth = container.offsetWidth;
+    const containerHeight = container.offsetHeight;
+
+    const randomX = Math.random() * (containerWidth - emoji.offsetWidth);
+    const randomY = Math.random() * (containerHeight - emoji.offsetHeight);
+
+    emoji.style.transform = `translate(${randomX}px, ${randomY}px)`;
+}
+
+flowers.forEach(flower => {
+    flower.addEventListener('click', moveRandomly);
+});
+
+
+    </script>
+</body>
+</html>
