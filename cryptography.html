@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptography</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="box">
+    <h2>
+      <div class="taas1">
+        <div class="wa">S</div>
+        <div class="wa">H</div>
+        <div class="wa">E</div>
+      </div>
+      <div class="taas2">
+        <div class="wa">I</div>
+        <div class="wa">S</div>
+      </div>
+      <div class="taas3">
+        <div class="wa">S</div>
+        <div class="wa">O</div>
+      </div>
+      <div class="taas4">
+        <div class="wa">N</div>
+        <div class="wa">I</div>
+        <div class="wa">C</div>
+        <div class="wa">E</div>
+      </div>
+    </h2>
+
+    <div>
+      <form id="loginForm" onsubmit="event.preventDefault(); checkAnswer();">
+        <p><strong>She is my world!</strong></p>
+
+        <p id="attempts">(&nbsp;<strong style="color: #03e9f4;">5</strong>&nbsp;)&nbsp;attempts</p>
+
+        <div class="timer-container">
+          <p><span id="timer">120</span>&nbsp;seconds</p>
+       </div>
+      
+
+        <div class="user">
+          <input type="text" id="answer" name="answer" placeholder="Type the Answer" required="">
+        </div>
+
+        <button type="submit" id="submitButton">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Submit
+        </button>
+        
+        <p id="message"></p>
+
+      </form>
+
+<div id="overlay">
+  <div class="message" id="overlayMessage">No attempts left or time's up</div>
+  <button id="tryAgainButton" onclick="resetGame()">
+      <span></span><span></span><span></span><span></span> Try Again
+  </button>
+</div>
+
+  </div>
+
+  <script src="./mail.js"></script>
+</body>
+</html>
